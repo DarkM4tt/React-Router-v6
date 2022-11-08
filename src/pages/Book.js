@@ -1,6 +1,11 @@
-import { useParams } from "react-router-dom";
+import { useOutletContext, useParams } from "react-router-dom";
 
 export function Book() {
   const { id } = useParams();
-  return <h1>Book {id}</h1>;
+  const obj = useOutletContext(); /* Takes data from outlet */
+  return (
+    <h1>
+      Book {id} {obj.hello}
+    </h1>
+  );
 }
